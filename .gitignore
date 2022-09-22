@@ -127,3 +127,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+color_classifier_training.code-workspace
