@@ -1,24 +1,13 @@
 from datetime import datetime
 import os
 
-# global models_path
-# models_path = "./trained_models"
+global models_path
+models_path = "./trained_models/model1/saved_per_train/train1"
 
 
-# if os.listdir(f"{models_path}"):
-#     last_model_num = os.listdir(f"{models_path}")[-1][-1]
-#     os.mkdir(f"{models_path}/model{int(last_model_num) + 1}")
-    
-#     # Makes a readme file that contains information on when was this created
-#     last_model = os.listdir(f"{models_path}")[-1]
-#     with open(f"{models_path}/{last_model}/readme.txt", "w+") as f:
-#         f.write(f"Model created on: {str(datetime.now())}")
-
-# elif not os.listdir(f"{models_path}"):
-#     os.mkdir(f"{models_path}/model1")
-
-#     # Makes a readme file that contains information on when was this created
-#     with open(f"{models_path}/model1/readme.txt", "w+") as f:
-#         f.write(f"Model created on: {str(datetime.now())}")
-
-print(datetime.now())
+trained_list = os.listdir(models_path)
+trained_list.remove("logs.csv")
+print(trained_list)
+print(min(trained_list, key=lambda loss_val:loss_val[-4:-1]))
+last_trained = os.listdir(f"{models_path}/{last_model}")[-1]
+print(last_trained)
