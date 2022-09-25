@@ -9,5 +9,3 @@ trained_list = os.listdir(models_path)
 trained_list.remove("logs.csv")
 print(trained_list)
 print(min(trained_list, key=lambda loss_val:loss_val[-4:-1]))
-last_trained = os.listdir(f"{models_path}/{last_model}")[-1]
-print(last_trained)
