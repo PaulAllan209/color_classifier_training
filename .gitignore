@@ -129,3 +129,5 @@ dmypy.json
 .pyre/
 color_classifier_training.code-workspace
 codes/testing.py
+codes/testing2.py
+/codes/testing.py

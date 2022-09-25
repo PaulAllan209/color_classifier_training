@@ -1,11 +1,7 @@
-from datetime import datetime
-import os
+anon_func = lambda x: min(x, key=lambda i:i[-1])
 
-global models_path
-models_path = "./trained_models/model1/saved_per_train/train1"
+test_list = ['wow1', 'wow2', 'wow3', 'wow4']
+test_list1 = ['wo1', 'wo2', 'wo3', 'wo4']
 
-
-trained_list = os.listdir(models_path)
-trained_list.remove("logs.csv")
-print(trained_list)
-print(min(trained_list, key=lambda loss_val:loss_val[-4:-1]))
+print(anon_func(test_list))
+print(anon_func(test_list1))
