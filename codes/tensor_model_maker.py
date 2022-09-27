@@ -10,7 +10,7 @@ class tensor_model1:
         pass
 
     @staticmethod
-    def make_model(train_dataset, train_labels, validation_data=None, num_of_inputs=3, num_of_outputs=11, num_of_hidden_layers=5, num_of_neurons_of_hidden_layers=15, saved_models_path="../trained_models"):
+    def make_model(train_dataset, train_labels, validation_data=None, num_of_inputs=3, num_of_outputs=11, num_of_hidden_layers=5, num_of_neurons_of_hidden_layers=15, epochs=100, batch_size=1000, save_freq=100, saved_models_path="../trained_models"):
         '''
         This function can be called if you want to create a fresh new model of color classifier
 
@@ -59,13 +59,13 @@ class tensor_model1:
         cp_callback = tf.keras.callbacks.ModelCheckpoint(filepath=checkpoint_path,
                                                         verbose=1,
                                                         monitor='accuracy',
-                                                        save_freq=100) # if save_freq='epochs' it saves the model per epoch
+                                                        save_freq=save_freq) # if save_freq='epochs' it saves the model per epoch
                                                                         # if save_freq=int_type it saves the model per <int_type> of batches
         # Train the model with the new callback
         model.fit(train_dataset, 
                 train_labels,  
-                epochs=100,
-                batch_size = 1000,
+                epochs=epochs,
+                batch_size=batch_size,
                 validation_data=validation_data,
                 callbacks=[cp_callback, csv_logger], # Pass callback to training
                 shuffle=True)  
