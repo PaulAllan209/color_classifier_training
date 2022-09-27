@@ -131,3 +131,6 @@ color_classifier_training.code-workspace
 codes/testing.py
 codes/testing2.py
 /codes/testing.py
+/stashed_models
+/recycle_bin
+/datas/mnist_number_dataset
